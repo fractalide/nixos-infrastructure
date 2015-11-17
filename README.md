@@ -39,11 +39,6 @@ This command should be run once you are happy with commited changes to localhost
 #### ./local-rebuild.sh
 This file is mainly used to assist in the development of nixpkgs and submitting them upstream to the nixos community. Typically it will **not** be used for our day-to-day operations.
 
-### Switching machines
-
-To switch machines please issue this command `echo -n "<machine-name>" hostname`. The chosen name *must* have an equivalent named *.nix file in the `/path/to/deployment/machines/` folder.
-Then issue the command `./rebuild.sh test` to change your current configuration to reflect the machine you want to "emulate". (technically you aren't emulating it, you're running the machine as if it was on your machine.)
-
 ----
 
 ## *Description of folders:*
