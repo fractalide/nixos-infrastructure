@@ -3,7 +3,7 @@
 
 cd `dirname $0`
 sudo rsync --filter="protect /hardware-configuration.nix" \
-           --filter="protect /hostname" \
+           --filter="protect /host.name" \
            --filter="protect /nixpkgs" \
            --filter="protect /private" \
            --filter="protect /release" \

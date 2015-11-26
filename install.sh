@@ -7,7 +7,7 @@
 # 'nixos-generate-config --root /mnt' (see the NixOS manual).
 #
 
-HOSTNAME_FILE="/mnt/etc/nixos/hostname"
+HOSTNAME_FILE="/mnt/etc/nixos/host.name"
 NIXRC="/mnt/deployment"
 NIXOS_CONFIG="/mnt/etc/nixos"
 UUID_FILE="/sys/class/dmi/id/product_uuid"
@@ -37,7 +37,7 @@ fi
 
 # Rsync files from the git repository to their final destination.
 rsync --filter="protect /hardware-configuration.nix" \
-           --filter="protect /hostname" \
+           --filter="protect /host.name" \
            --filter="protect /private" \
            --filter="exclude,s *.gitignore" \
            --filter="exclude,s *.gitmodules" \
