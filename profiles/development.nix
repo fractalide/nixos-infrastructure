@@ -30,6 +30,9 @@ in
 	openssl
 	nanomsg
 	capnproto
+	SDL2
 	];
-	security.setuidPrograms = [ "mount_afp" ];
+
+	environment.variables.LD_LIBRARY_PATH = "${pkgs.nanomsg}:${pkgs.xlibs}:${pkgs.mesa}/lib:${pkgs.libX11}/lib:${pkgs.libXcursor}/lib:${pkgs.libXxf86vm}/lib:${pkgs.libXi}/lib:${pkgs.SDL2}/lib";
+
 }
