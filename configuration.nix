@@ -1,4 +1,4 @@
-let hostName = "${builtins.readFile ./hostname}";
+let hostName = "${builtins.readFile ./host.name}";
 in
 rec {
 	imports = [ # Include the results of the hardware scan.

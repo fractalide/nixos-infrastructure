@@ -1,5 +1,5 @@
 
-WARNING: Do not play around with the hostname file by changing it's content.
+WARNING: Do not play around with the host.name file by changing it's content.
 You are in for a world of pain if you do. Instead experiment with services and
 packages by adding them into your specific machine.
 
@@ -10,7 +10,7 @@ setup on nixos
 
 $ git clone git@bitbucket.org:fractalide/infrastructure
 $ cd infrastructure
-$ echo -n "name_corresponding_to_a_machine_dot_nix" > hostname
+$ echo -n "name_corresponding_to_a_machine_dot_nix" > host.name
 $ ./rebuild.sh test
 
 ... all okay?
@@ -43,7 +43,7 @@ This file is mainly used to assist in the development of nixpkgs and submitting 
 
 ## *Description of folders:*
 ### Machines:
-Name a file in the `/path/to/deployment/machines/<hostname>.nix`. Then add profiles you want to the `imports = [...]` section constructing the machine.
+Name a file in the `/path/to/deployment/machines/<host.name>.nix`. Then add profiles you want to the `imports = [...]` section constructing the machine.
 Machine specific configuration, such as encrypted harddisks, machine specific users etc. should be placed in this file.
 
 ### Profiles:
