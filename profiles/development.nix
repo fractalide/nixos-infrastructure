@@ -30,9 +30,8 @@ in
 	openssl
 	nanomsg
 	capnproto
+	mesa
+	freetype
 	SDL2
 	];
-
-	environment.variables.LD_LIBRARY_PATH = "${pkgs.nanomsg}:${pkgs.xlibs}:${pkgs.mesa}/lib:${pkgs.libX11}/lib:${pkgs.libXcursor}/lib:${pkgs.libXxf86vm}/lib:${pkgs.libXi}/lib:${pkgs.SDL2}/lib";
-
 }
