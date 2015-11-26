@@ -26,6 +26,8 @@ in
 		rustcNightly
 		cargoNightly
 		openssl
+		nanomsg
+		capnproto
 	];
 	security.setuidPrograms = [ "mount_afp" ];
 }
