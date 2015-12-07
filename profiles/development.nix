@@ -5,6 +5,7 @@ callPackage = pkgs.lib.callPackageWith (pkgs // self);
 self = rec {
 	boot = callPackage ../pkgs/boot {};
 	rustc = callPackage ../pkgs/rust-nightly.nix {};
+	#capnpc-rust = callPackage ../pkgs/capnpc-rust.nix {}; #must wait for https://github.com/NixOS/nixpkgs/issues/8186
 };
 
 rustcNightly = self.rustc.rustc {

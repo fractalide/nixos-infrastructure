@@ -8,5 +8,6 @@ let
 	callPackage = pkgs.lib.callPackageWith (pkgs // fractalide-pkgs);
 	fractalide-pkgs = rec {
 		boot = callPackage ./boot {};
+		capnpc-rust = callPackage ./capnpc-rust.nix {};
 	};
 in fractalide-pkgs
