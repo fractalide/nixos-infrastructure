@@ -29,6 +29,11 @@
 	jre
 	go
 	];
+
+environment.variables = {
+		PATH = "PATH=@initialPath@:/home/stewart/bin";
+	};
+
 	i18n = {
 		consoleFont = "lat9w-16";
 		consoleKeyMap = "dvorak";
@@ -65,6 +70,7 @@
 	};
 
 	networking = {
+#		networkmanager.enable = true;
 		firewall = {
 			allowedTCPPorts = [ ];
 		};
