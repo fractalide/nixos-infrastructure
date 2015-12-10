@@ -5,7 +5,8 @@ callPackage = pkgs.lib.callPackageWith (pkgs // self);
 self = rec {
 	boot = callPackage ../pkgs/boot {};
 	rustc = callPackage ../pkgs/rust-nightly.nix {};
-	#capnpc-rust = callPackage ../pkgs/capnpc-rust.nix {}; #must wait for https://github.com/NixOS/nixpkgs/issues/8186
+	capnpc-rust = callPackage ../pkgs/capnpc-rust.nix {}; #must wait for https://github.com/NixOS/nixpkgs/issues/8186
+	nanomsg = callPackage ../pkgs/nanomsg.nix {};
 };
 
 rustcNightly = self.rustc.rustc {
@@ -24,12 +25,13 @@ in
 	binutils
 	sublime3
 	self.boot
-	#		rustcNightly
-	#		cargoNightly
+	#rustcNightly
+	#cargoNightly
+	#capnpc-rust
 	rustcMaster
 	cargo
 	openssl
-	nanomsg
+	self.nanomsg
 	capnproto
 	mesa
 	freetype
