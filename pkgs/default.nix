@@ -5,11 +5,10 @@
 
 let
 
-	callPackage = pkgs.lib.callPackageWith (pkgs // fractalide-pkgs);
-	fractalide-pkgs = rec {
+	callPackage = pkgs.lib.callPackageWith (pkgs // self);
+	self = rec {
 	#	boot = callPackage ./boot {};
-		#capnpc-rust = callPackage ./capnpc-rust.nix {};
-		nanomsg = callPackage ./nanomsg.nix {};
-
+	#rustRegistry = callPackage ./rust-packages.nix {};
+	#capnpc-rust = callPackage ./capnpc-rust { inherit rustRegistry;};
 	};
-in fractalide-pkgs
+in self

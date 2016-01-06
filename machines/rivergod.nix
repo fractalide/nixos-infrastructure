@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
-
+let
+	fractalide = /home/stewart/dev/fractalide/fractalide;
+in
 {
+	require = [ "${fractalide}/fractalide-module.nix" ];
+	services.fractalide.enable = true;
+
 	boot = {
 		loader.grub.enable = true;
 		loader.grub.version = 2;
@@ -20,14 +25,17 @@
 	../profiles/development.nix
 	../profiles/dvorak-xmonad-graphics.nix
 	../profiles/networking.nix
-	#		../profiles/redshift.nix
+#	../profiles/redshift.nix
 	../profiles/database.nix
 	../profiles/browser.nix
 	];
 
+
 	environment.systemPackages = with pkgs; [
 	jre
 	go
+	pavucontrol
+	kde4.kvirc
 	];
 
 environment.variables = {
@@ -69,6 +77,8 @@ environment.variables = {
 		};
 	};
 
+	#nix.nixPath = [ "/nix/var/nix/profiles/per-user/root/channels/nixos" "nixos-config=/etc/nixos/configuration.nix" "/nix/var/nix/profiles/per-user/root/channels" ];
+	nix.useChroot = true;
 	networking = {
 #		networkmanager.enable = true;
 		firewall = {
