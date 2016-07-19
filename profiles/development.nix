@@ -28,8 +28,9 @@ in
 	#rustcNightly
 	#cargoNightly
 	#self.capnpc-rust
-	rustcMaster
-	cargo
+	# rustcMaster
+	rustUnstable.cargo
+	rustUnstable.rustc
 	openssl
 	capnproto
 	mesa
